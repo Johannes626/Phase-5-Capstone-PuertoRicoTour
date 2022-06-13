@@ -1,9 +1,8 @@
 import React from 'react'
-import {useState} from 'react'
-import { Link } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function LogoutPage({setCurrentUser, setUserLogged, setUserPlaces}) {
-
+    let navigate = useNavigate();
     //function that handles logout
     const handleLogout = () => {
         fetch("/logout", {method: "DELETE"})
@@ -14,15 +13,16 @@ function LogoutPage({setCurrentUser, setUserLogged, setUserPlaces}) {
             setUserPlaces([])
             alert(deleteResponse.message)
         })
+        navigate("/")
     }
 
     return (
         <div className="logout-page">
             <div className="log-form">
                 <h3 >Are you sure you want to log out?</h3>
-                <Link className="redirect-links" onClick={handleLogout} to="/">Yes, I'm sure</Link>
-                <br/><br/><br/>
-                <Link className="redirect-links" to="/">No, I would Like to stay</Link>
+                <button className="form-button" onClick={handleLogout}>Yes, I'm sure</button>
+                <br/><br/>
+                <button className="form-button" onClick={()=>{navigate("/")}}>No, I would Like to stay</button>
             </div>
         </div>
     )

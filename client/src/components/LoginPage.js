@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function LoginPage({userToLogin, setUserToLogin, handleLoginSubmit}) {
 
@@ -18,7 +18,6 @@ function LoginPage({userToLogin, setUserToLogin, handleLoginSubmit}) {
                             name="username"
                             className="login-input"
                             onChange={handleLoginInputs}
-                            id="signIn"
                             type="text"
                             placeholder="username"
                         />
@@ -26,12 +25,11 @@ function LoginPage({userToLogin, setUserToLogin, handleLoginSubmit}) {
                             name="password"
                             className="login-input"
                             onChange={handleLoginInputs}
-                            id="loginPassword"
                             type="password"
                             placeholder="password"
                         />
                         <button className="form-button" type="submit">
-                        Submit
+                        Login
                         </button>
                         <p className="sign-message">
                         Not registered? <Link to="create-account">Create an account</Link>

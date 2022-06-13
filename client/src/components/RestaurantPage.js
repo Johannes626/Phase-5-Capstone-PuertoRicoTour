@@ -1,20 +1,23 @@
 import React from 'react'
 import IndividualRestaurant from './IndividualRestaurant'
 
-function RestaurantPage({allPlaces}) {
+function RestaurantPage({allPlacesFilter, handleSavingRestAndLoc}) {
     
-    const indivPlaces = allPlaces.filter((eachPlace)=>{
+    const indivPlaces = allPlacesFilter.filter((eachPlace)=>{
         if(eachPlace.restaurant === true){
             return eachPlace
         }
     })
+    
     const indivRestaurant = indivPlaces.map((eachPlace)=>{
+        
         return (
             <>
-                <IndividualRestaurant eachPlace={eachPlace} key={eachPlace.id}/>
+                <IndividualRestaurant eachPlace={eachPlace} key={eachPlace.id} handleSavingRestAndLoc={handleSavingRestAndLoc}/>
             </>
         )
     })
+    
 
     return (
         <section className="card-row">

@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(151, 151, 151);
+  background-color: rgb(235, 227, 138);
 }
 
 code {
@@ -23,7 +23,7 @@ code {
 
 /* -----------------------------------------TOP NAVBAR------------------------------------------------------------------ */
 .navbar-top {
-  background-color: #333;
+  background-color: #ba625a;
   overflow: hidden;
 }
 
@@ -33,7 +33,7 @@ code {
   padding-right: 10rem;
   padding-top: 8px;
   margin: 0;
-  color: white;
+  color: #e6e6e6;
   cursor: default;
 }
 
@@ -43,6 +43,22 @@ code {
   padding-bottom: 0;
 } */
 
+#search-bar{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #e0e0e0;
+  width: 31%;
+  border: 0px;
+  margin: 0 0px 15px;
+  margin-top: 9px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: .35rem;
+  color: rgb(0, 0, 0);
+  display: inline-block;
+}
+
 /* Style the links inside the navigation bar */
 .navbar-top a {
   float: right;
@@ -51,14 +67,15 @@ code {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-  transition: 0.3s
+  transition: 0.3s;
   /* border-left: solid 1px; */
   /* border-color: #0e0e0e; */
+  text-transform: uppercase;
 }
 
 /* Change the color of links on hover */
 .navbar-top a:hover {
-  background-color: #ddd;
+  background-color: rgb(180, 49, 49);
   color: black;
 }
 
@@ -72,11 +89,12 @@ code {
 .navbar-bottom {
   text-align: center;
   overflow: hidden;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.332);
 }
 
 .navbar-bottom a {
-  background-color: #555;
-  color: white;
+  background-color: rgb(111, 204, 204);
+  color: rgb(39, 39, 39);
   float: left;
   /* border: none; */
   outline: none;
@@ -86,12 +104,14 @@ code {
   font-size: 17px;
   width: 33.33%;
   text-decoration: none;
-  border-color: #0e0e0e;
-  transition: 0.3s
+  /* border-color: #0e0e0e; */
+  transition: 0.3s;
+  text-transform: uppercase;
 }
 
 .navbar-bottom a:hover {
-  background-color: #777;
+  background-color: rgb(57, 135, 187);
+  color: white;
 }
 
 /* .navbar-bottom a:active {
@@ -99,12 +119,12 @@ code {
 } */
 
 /* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
+/* .tabcontent {
   color: rgb(0, 0, 0);
   display: none;
   padding: 100px 20px;
   height: 100%;
-}
+} */
 /* ---------------------------------------LoginPage---------------------------------------- */
 .login-page {
   width: 360px;
@@ -121,14 +141,14 @@ code {
   padding: 45px;
   text-align: center;
   /* border-radius: .5rem; */
-  background-color: rgb(85, 85, 85);
-  box-shadow: 0 0 20px .5rem;
+  background-color: #ba625a;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.479);
 }
 
 .login-input {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #0e0e0e;
+  background: #f2f2f2;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
@@ -136,32 +156,32 @@ code {
   box-sizing: border-box;
   font-size: 14px;
   /* border-radius: .35rem; */
-  color: rgb(255, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .form-button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #9a9a9a;
+  background: rgb(111, 204, 204);
   width: 100%;
   border: 0;
   padding: 15px;
-  color: #333333;
+  color: rgb(39, 39, 39);
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
 }
-
-.form-button:hover, .form-button:active, .form-button:focus {
-  background: #000000;
-  color: #b5b5b5;
+/* , .form-button:active, .form-button:focus */
+.form-button:hover {
+  background: rgb(57, 135, 187);
+  color: #ffffff;
 }
 
 .sign-message {
   margin: 15px 0 0;
-  color: #b3b3b3;
+  color: #f2f2f2;
   font-size: 12px;
 }
 
@@ -206,9 +226,24 @@ code {
 /* -------------------------------------MapPage------------------------------------------------- */
 
 
-.map-container{
+.first-map-container{
+  display: flex;
+  justify-content: center;
   text-align: center;
-  margin-top: 1rem;
+  margin: .5rem;
+  width: 99%;
+  height: 100;
+}
+.first-map-child{
+  padding-top: .75rem;
+  width: 1400px;
+  height: 600px;
+}
+.map-container{
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.332);
 }
 
 /* -------------------------------------HomePage------------------------------------------------- */
@@ -227,20 +262,57 @@ code {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.332);
   transition: 0.5s;
   /* padding: 16px; */
   width: 15rem;
-  height: 16rem;
+  /* height: 20rem; */
   text-align: center;
-  background-color: #707070; 
+  background-color: #c1accc; 
   margin: 1rem;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.325);
   transform: scale(1.1);
 }
 .card-image {
-  
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  overflow: hidden;
+}
+.card h3{
+  padding: 0;
+  margin-top: 4px;
+  margin-bottom: 9px;
+}
+.card h4{
+  margin: 0;
+  font-size: 15px;
+}
+.card button{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  margin: .5rem;
+  cursor: pointer;
+  transition: 0.2s;
+  color: rgb(0, 0, 0);
+  border: 0;
+  padding: 10px;
+  width: 75%;
+  outline: 0;
+  background: rgb(235, 227, 138);
+}
+.card button:hover{
+  background: rgb(238, 184, 77);
+  color: #000000;
+  transform: scale(1.02);
+  outline: 1px solid #828282;
+}
+.card p {
+  min-height: 70px;
+  max-height: 9px;
+  padding: 10px;
+  position:relative;
 }

@@ -1,17 +1,18 @@
 import React from 'react'
 import IndividualTouristLoc from './IndividualTouristLoc'
 
-function TouristicLocPage({allPlaces}) {
+function TouristicLocPage({allPlacesFilter, handleSavingRestAndLoc}) {
     
-    const indivPlaces = allPlaces.filter((eachPlace)=>{
+    const indivPlaces = allPlacesFilter.filter((eachPlace)=>{
         if(eachPlace.tourist_loc === true){
             return eachPlace
         }
     })
+    
     const indivTouristLoc = indivPlaces.map((eachPlace)=>{
         return (
             <>
-                <IndividualTouristLoc eachPlace={eachPlace} key={eachPlace.id}/>
+                <IndividualTouristLoc eachPlace={eachPlace} key={eachPlace.id} handleSavingRestAndLoc={handleSavingRestAndLoc}/>
             </>
         )
     })
